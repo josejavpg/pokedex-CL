@@ -74,6 +74,27 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		FF6FD60425FE82080006659B /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		FF6FD60525FE820C0006659B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		FF6FD60625FE82120006659B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		FFDFAEF725FCD9BB00AB76E4 = {
 			isa = PBXGroup;
 			children = (
@@ -97,6 +118,9 @@
 		FFDFAF0225FCD9BB00AB76E4 /* Pokedex-CL */ = {
 			isa = PBXGroup;
 			children = (
+				FF6FD60625FE82120006659B /* Model */,
+				FF6FD60525FE820C0006659B /* ViewModel */,
+				FF6FD60425FE82080006659B /* View */,
 				FFDFAF0325FCD9BB00AB76E4 /* Pokedex_CLApp.swift */,
 				FFDFAF0525FCD9BB00AB76E4 /* ContentView.swift */,
 				FFDFAF0725FCD9BD00AB76E4 /* Assets.xcassets */,
