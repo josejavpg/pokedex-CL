@@ -3,10 +3,11 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF6FD5FC25FE78AE0006659B /* SwiftLintFramework in Frameworks */ = {isa = PBXBuildFile; productRef = FF6FD5FB25FE78AE0006659B /* SwiftLintFramework */; };
 		FFDFAF0425FCD9BB00AB76E4 /* Pokedex_CLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF0325FCD9BB00AB76E4 /* Pokedex_CLApp.swift */; };
 		FFDFAF0625FCD9BB00AB76E4 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF0525FCD9BB00AB76E4 /* ContentView.swift */; };
 		FFDFAF0825FCD9BD00AB76E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFAF0725FCD9BD00AB76E4 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FF6FD5FC25FE78AE0006659B /* SwiftLintFramework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,12 +142,16 @@
 				FFDFAEFC25FCD9BB00AB76E4 /* Sources */,
 				FFDFAEFD25FCD9BB00AB76E4 /* Frameworks */,
 				FFDFAEFE25FCD9BB00AB76E4 /* Resources */,
+				FF6FD60025FE79210006659B /* SwiftLint */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
 			name = "Pokedex-CL";
+			packageProductDependencies = (
+				FF6FD5FB25FE78AE0006659B /* SwiftLintFramework */,
+			);
 			productName = "Pokedex-CL";
 			productReference = FFDFAF0025FCD9BB00AB76E4 /* Pokedex-CL.app */;
 			productType = "com.apple.product-type.application";
@@ -217,6 +223,9 @@
 				Base,
 			);
 			mainGroup = FFDFAEF725FCD9BB00AB76E4;
+			packageReferences = (
+				FF6FD5FA25FE78AE0006659B /* XCRemoteSwiftPackageReference "SwiftLint" */,
+			);
 			productRefGroup = FFDFAF0125FCD9BB00AB76E4 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -253,6 +262,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		FF6FD60025FE79210006659B /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		FFDFAEFC25FCD9BB00AB76E4 /* Sources */ = {
@@ -580,6 +610,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		FF6FD5FA25FE78AE0006659B /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.43.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		FF6FD5FB25FE78AE0006659B /* SwiftLintFramework */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = FF6FD5FA25FE78AE0006659B /* XCRemoteSwiftPackageReference "SwiftLint" */;
+			productName = SwiftLintFramework;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = FFDFAEF825FCD9BB00AB76E4 /* Project object */;
 }
