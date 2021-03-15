@@ -83,20 +83,12 @@ struct Versions: Codable {
     let generationIi: GenerationIi
     let generationIii: GenerationIii
     let generationIv: GenerationIv
-    let generationV: GenerationV
-    let generationVi: [String: GenerationVi]
-    let generationVii: GenerationVii
-    let generationViii: GenerationViii
 
     enum CodingKeys: String, CodingKey {
         case generationI = "generation-i"
         case generationIi = "generation-ii"
         case generationIii = "generation-iii"
         case generationIv = "generation-iv"
-        case generationV = "generation-v"
-        case generationVi = "generation-vi"
-        case generationVii = "generation-vii"
-        case generationViii = "generation-viii"
     }
 }
 
@@ -207,57 +199,6 @@ class DiamondPearl: Codable {
         self.frontShinyFemale = frontShinyFemale
         self.animated = animated
     }
-}
-
-// MARK: - GenerationV
-struct GenerationV: Codable {
-    let blackWhite: DiamondPearl
-
-    enum CodingKeys: String, CodingKey {
-        case blackWhite = "black-white"
-    }
-}
-
-// MARK: - GenerationVi
-struct GenerationVi: Codable {
-    let frontDefault: String
-    let frontFemale: JSONNull?
-    let frontShiny: String
-    let frontShinyFemale: JSONNull?
-
-    enum CodingKeys: String, CodingKey {
-        case frontDefault = "front_default"
-        case frontFemale = "front_female"
-        case frontShiny = "front_shiny"
-        case frontShinyFemale = "front_shiny_female"
-    }
-}
-
-// MARK: - GenerationVii
-struct GenerationVii: Codable {
-    let icons: Icons
-    let ultraSunUltraMoon: GenerationVi
-
-    enum CodingKeys: String, CodingKey {
-        case icons
-        case ultraSunUltraMoon = "ultra-sun-ultra-moon"
-    }
-}
-
-// MARK: - Icons
-struct Icons: Codable {
-    let frontDefault: String
-    let frontFemale: JSONNull?
-
-    enum CodingKeys: String, CodingKey {
-        case frontDefault = "front_default"
-        case frontFemale = "front_female"
-    }
-}
-
-// MARK: - GenerationViii
-struct GenerationViii: Codable {
-    let icons: Icons
 }
 
 // MARK: - Stat
