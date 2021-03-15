@@ -6,7 +6,7 @@
 import Foundation
 
 // MARK: - Move
-struct Move: Codable {
+struct MoveDetail: Codable {
     let id: Int
     let name: String
     let power, pp: Int
