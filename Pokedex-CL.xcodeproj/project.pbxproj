@@ -19,8 +19,9 @@
 		FF6FD66B25FFB8EC0006659B /* PokemonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD66A25FFB8EC0006659B /* PokemonService.swift */; };
 		FF6FD68025FFBAAD0006659B /* Pokemon.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD61225FE82A80006659B /* Pokemon.swift */; };
 		FF6FD68E25FFC21F0006659B /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD68D25FFC21F0006659B /* PokemonList.swift */; };
+		FF6FD69425FFC7B40006659B /* PokemonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD69325FFC7B40006659B /* PokemonViewModel.swift */; };
 		FFDFAF0425FCD9BB00AB76E4 /* Pokedex_CLApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF0325FCD9BB00AB76E4 /* Pokedex_CLApp.swift */; };
-		FFDFAF0625FCD9BB00AB76E4 /* PokemonList.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF0525FCD9BB00AB76E4 /* PokemonList.swift */; };
+		FFDFAF0625FCD9BB00AB76E4 /* PokemonListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF0525FCD9BB00AB76E4 /* PokemonListView.swift */; };
 		FFDFAF0825FCD9BD00AB76E4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFAF0725FCD9BD00AB76E4 /* Assets.xcassets */; };
 		FFDFAF0B25FCD9BD00AB76E4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FFDFAF0A25FCD9BD00AB76E4 /* Preview Assets.xcassets */; };
 		FFDFAF1625FCD9BD00AB76E4 /* Pokedex_CLTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FFDFAF1525FCD9BD00AB76E4 /* Pokedex_CLTests.swift */; };
@@ -93,9 +94,10 @@
 		FF6FD66425FFB6670006659B /* MoveDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoveDetail.swift; sourceTree = "<group>"; };
 		FF6FD66A25FFB8EC0006659B /* PokemonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonService.swift; sourceTree = "<group>"; };
 		FF6FD68D25FFC21F0006659B /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
+		FF6FD69325FFC7B40006659B /* PokemonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonViewModel.swift; sourceTree = "<group>"; };
 		FFDFAF0025FCD9BB00AB76E4 /* Pokedex-CL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Pokedex-CL.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FFDFAF0325FCD9BB00AB76E4 /* Pokedex_CLApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokedex_CLApp.swift; sourceTree = "<group>"; };
-		FFDFAF0525FCD9BB00AB76E4 /* PokemonList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonList.swift; sourceTree = "<group>"; };
+		FFDFAF0525FCD9BB00AB76E4 /* PokemonListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListView.swift; sourceTree = "<group>"; };
 		FFDFAF0725FCD9BD00AB76E4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FFDFAF0A25FCD9BD00AB76E4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		FFDFAF0C25FCD9BD00AB76E4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -152,7 +154,7 @@
 			isa = PBXGroup;
 			children = (
 				FF6FD61725FE83070006659B /* PokemonCellView.swift */,
-				FFDFAF0525FCD9BB00AB76E4 /* PokemonList.swift */,
+				FFDFAF0525FCD9BB00AB76E4 /* PokemonListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -160,6 +162,7 @@
 		FF6FD60525FE820C0006659B /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				FF6FD69325FFC7B40006659B /* PokemonViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -511,8 +514,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FFDFAF0625FCD9BB00AB76E4 /* PokemonList.swift in Sources */,
+				FFDFAF0625FCD9BB00AB76E4 /* PokemonListView.swift in Sources */,
 				FF6FD61825FE83070006659B /* PokemonCellView.swift in Sources */,
+				FF6FD69425FFC7B40006659B /* PokemonViewModel.swift in Sources */,
 				FFDFAF0425FCD9BB00AB76E4 /* Pokedex_CLApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +581,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PokedexCLCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -606,6 +611,7 @@
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
 				INFOPLIST_FILE = PokedexCLCore/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -788,7 +794,7 @@
 				DEVELOPMENT_TEAM = W3Z34WKGW8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pokedex-CL/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -811,7 +817,7 @@
 				DEVELOPMENT_TEAM = W3Z34WKGW8;
 				ENABLE_PREVIEWS = YES;
 				INFOPLIST_FILE = "Pokedex-CL/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

@@ -6,17 +6,17 @@
 import Foundation
 
 // MARK: - Pokemon
-struct Pokemon: Codable {
+public struct Pokemon: Codable {
     let baseExperience: Int
     let gameIndices: [GameIndex]
-    let height, id: Int
-    let moves: [Move]
-    let name: String
+    public let height, id: Int
+    public let moves: [Move]
+    public let name: String
     let order: Int
-    let sprites: Sprites
+    public let sprites: Sprites
     let stats: [Stat]
     let types: [TypeElement]
-    let weight: Int
+    public let weight: Int
 
     enum CodingKeys: String, CodingKey {
         case baseExperience = "base_experience"
@@ -43,14 +43,14 @@ struct Version: Codable {
 }
 
 // MARK: - Move
-struct Move: Codable {
+public struct Move: Codable {
     let move: Version
 }
 
 // MARK: - Sprites
-struct Sprites: Codable {
+public struct Sprites: Codable {
     let frontDefault: String
-    let other: Other
+    public let other: Other
     let versions: Versions
 
     enum CodingKeys: String, CodingKey {
@@ -60,8 +60,8 @@ struct Sprites: Codable {
 }
 
 // MARK: - Other
-struct Other: Codable {
-    let officialArtwork: OfficialArtwork
+public struct Other: Codable {
+    public let officialArtwork: OfficialArtwork
 
     enum CodingKeys: String, CodingKey {
         case officialArtwork = "official-artwork"
@@ -69,8 +69,8 @@ struct Other: Codable {
 }
 
 // MARK: - OfficialArtwork
-struct OfficialArtwork: Codable {
-    let frontDefault: String
+public struct OfficialArtwork: Codable {
+    public let frontDefault: String
 
     enum CodingKeys: String, CodingKey {
         case frontDefault = "front_default"

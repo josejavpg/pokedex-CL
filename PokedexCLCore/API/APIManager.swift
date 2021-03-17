@@ -12,11 +12,11 @@ class APIManager {
 
 private extension URL {
     static func makeForEndpoint(_ endpoint: String) -> URL {
-        URL(string: "https://pokeapi.co/api/v2/")!
+        URL(string: "https://pokeapi.co/api/v2/\(endpoint)")!
     }
 }
 
-enum Endpoint {
+public enum Endpoint {
     case move(id: Int)
     case pokemon(id: Int)
     case pokemonsByGeneration(id: Int)
@@ -24,7 +24,7 @@ enum Endpoint {
 }
 
 extension Endpoint {
-    var url: URL {
+    public var url: URL {
         switch self {
         case .move(let id):
             return .makeForEndpoint("move/\(id)?")
@@ -39,10 +39,10 @@ extension Endpoint {
 }
 
 extension URLSession {
-    typealias Handler = (Data?, URLResponse?, Error?) -> Void
+    public typealias Handler = (Data?, URLResponse?, Error?) -> Void
     
     @discardableResult
-    func request(
+    public func request(
         _ endpoint: Endpoint,
         then handler: @escaping Handler
     ) -> URLSessionDataTask {

@@ -6,22 +6,24 @@
 import Foundation
 
 // MARK: - PokemonList
-struct PokemonList: Codable {
-    let results: [PKResult]
+public struct PokemonList: Codable {
+    public let results: [PKResult]?
 }
 
 // MARK: - Result
-struct PKResult: Codable {
-    let name: String
-    let url: String
-    lazy var id: Int = {
-        return getId(from: self.url)
-    }()
+public struct PKResult: Codable, Identifiable {
+    public let name: String
+    public let url: String
+    public var id = UUID()
     
-    func getId(from url: String) -> Int {
-        let strArray = url.components(separatedBy: "/")
-        guard let idString = strArray.last else { return 0 }
-        return Int(idString) ?? 0
-    }
+    enum CodingKeys: String, CodingKey {
+            case name
+            case url
+        }
+//    public func getId(from url: String) -> Int {
+//        let strArray = url.components(separatedBy: "/")
+//        guard let idString = strArray.last else { return 0 }
+//        return Int(idString) ?? 0
+//    }
 }
 
