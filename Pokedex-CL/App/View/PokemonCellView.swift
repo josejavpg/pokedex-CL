@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
-
-import SwiftUI
+import PokedexCLCore
 
 struct PokemonCellView: View {
+    let pokemon: PKPreview
+    
     let gradient = LinearGradient(gradient: Gradient(colors: [.white, .green]),
                                   startPoint: .top,
                                   endPoint: .bottom)
@@ -17,7 +18,7 @@ struct PokemonCellView: View {
     var body: some View {
         ZStack {
             VStack(alignment: .center) {
-                Text("Bulbasor")
+                Text(pokemon.name)
                     .font(.headline)
                 
                 Image("1")
@@ -26,7 +27,7 @@ struct PokemonCellView: View {
                     .frame(width: 70, height: 70, alignment: .center)
                     .shadow(color: .black, radius: 2, x: 0.0, y: 0.0)
                     
-                Text("1")
+                Text(pokemon.id)
                     .font(.subheadline)
                     .padding(.horizontal, 16)
                     .padding(.vertical, 8)
@@ -44,10 +45,12 @@ struct PokemonCellView: View {
     }
 }
 
-struct PokemonCellView_Previews: PreviewProvider {
-    static var previews: some View {
-        PokemonCellView()
-            .previewLayout(.sizeThatFits)
-            .padding()
+extension PokemonCellView {
+    class ViewModel: ObservableObject {
+        @Published var pokemonPreview: PKPreview
+        
+        init(pokemonPreview: PKPreview) {
+            self.pokemonPreview = pokemonPreview
+        }
     }
 }

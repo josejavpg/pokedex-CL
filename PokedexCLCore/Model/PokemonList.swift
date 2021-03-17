@@ -11,19 +11,28 @@ public struct PokemonList: Codable {
 }
 
 // MARK: - Result
-public struct PKResult: Codable, Identifiable {
+public struct PKResult: Codable {
     public let name: String
     public let url: String
-    public var id = UUID()
     
-    enum CodingKeys: String, CodingKey {
-            case name
-            case url
-        }
-//    public func getId(from url: String) -> Int {
-//        let strArray = url.components(separatedBy: "/")
-//        guard let idString = strArray.last else { return 0 }
-//        return Int(idString) ?? 0
-//    }
+    public func getId(from url: String) -> String {
+        let strArray = url.components(separatedBy: "/")
+        guard strArray.count > 1 else { return "0" }
+        let idIndex = strArray.endIndex - 2
+        let idString = strArray[idIndex]
+        return idString
+    }
+}
+
+public struct PKPreview: Identifiable {
+    public init(id: String, name: String, url: String) {
+        self.id = id
+        self.name = name
+        self.url = url
+    }
+    
+    public let id: String
+    public let name: String
+    public let url: String
 }
 

@@ -9,7 +9,7 @@ import SwiftUI
 import PokedexCLCore
 
 struct PokemonGenerationListRow: View {
-    @Binding var pokemons: [PKResult]
+    @Binding var pokemons: [PKPreview]
     @State var title: String
     
     private let gridItems = [GridItem(.fixed(170), spacing:20), GridItem(.fixed(170), spacing:20)]
@@ -21,7 +21,7 @@ struct PokemonGenerationListRow: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: gridItems, spacing: 20) {
                     ForEach(pokemons) { pokemon in
-                        PokemonCellView()
+                        PokemonCellView(pokemon: pokemon)
                     }
                 }
             }

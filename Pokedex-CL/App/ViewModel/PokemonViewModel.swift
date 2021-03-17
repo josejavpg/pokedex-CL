@@ -47,20 +47,20 @@ extension PKGeneration {
         case .first:
             return 0
         case .second:
-            return Self.first.rawValue
+            return Self.first.limit
         case .third:
-            return Self.second.rawValue
+            return Self.second.limit
         case .fourth:
-            return Self.third.rawValue
+            return Self.third.limit
         }
     }
 }
 
 class PokemonListViewModel: ObservableObject {
-    @Published var pkFirstGen = [PKResult]()
-    @Published var pkSecondGen = [PKResult]()
-    @Published var pkThirdtGen = [PKResult]()
-    @Published var pkFourthGen = [PKResult]()
+    @Published var pkFirstGen = [PKPreview]()
+    @Published var pkSecondGen = [PKPreview]()
+    @Published var pkThirdtGen = [PKPreview]()
+    @Published var pkFourthGen = [PKPreview]()
     
     init(generations: [PKGeneration]) {
         _ = generations.map{ fetchPokemonList(by: $0) }
@@ -77,16 +77,17 @@ extension PokemonListViewModel {
             }
             
             guard let pkResults = pkResults else { return  }
+            let pkPreviewList = pkResults.map { PKPreview(id: $0.getId(from: $0.url), name: $0.name, url: $0.url)}
             DispatchQueue.main.async {
                 switch generation {
                 case .first:
-                    return  self.pkFirstGen = pkResults
+                    return  self.pkFirstGen = pkPreviewList
                 case .second:
-                    return  self.pkSecondGen = pkResults
+                    return  self.pkSecondGen = pkPreviewList
                 case .third:
-                    return  self.pkThirdtGen = pkResults
+                    return  self.pkThirdtGen = pkPreviewList
                 case .fourth:
-                    return  self.pkFourthGen = pkResults
+                    return  self.pkFourthGen = pkPreviewList
                 }
             }
             
