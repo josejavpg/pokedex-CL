@@ -8,23 +8,25 @@
 import SwiftUI
 
 struct PokemonListView: View {
-    private let gridItems = [GridItem(.fixed(170), spacing:20), GridItem(.fixed(170), spacing:20)]
     @ObservedObject private var viewModel = PokemonListViewModel(generations: [.first, .second, .third, .fourth])
     var body: some View {
         NavigationView {
-            VStack(alignment: .leading) {
-                Text("First Generation")
-                    .font(.headline)
-                ScrollView(.horizontal) {
-                    LazyHGrid(rows: gridItems, spacing: 20) {
-                        ForEach(viewModel.pkFirstGen) { pokemon in
-                            PokemonCellView()
-                        }
-                    }
+            ScrollView {
+                Group {
+                    //MARK:- First Gen
+                    PokemonGenerationListRow(pokemons: $viewModel.pkFirstGen, title: PKGeneration.first.title)
+                    Divider()
+                    //MARK:- Second Gen
+                    PokemonGenerationListRow(pokemons: $viewModel.pkSecondGen, title: PKGeneration.second.title)
+                    Divider()
+                    //MARK:- Third Gen
+                    PokemonGenerationListRow(pokemons: $viewModel.pkThirdtGen, title: PKGeneration.third.title)
+                    Divider()
+                    //MARK:- Fourth Gen
+                    PokemonGenerationListRow(pokemons: $viewModel.pkFourthGen, title: PKGeneration.fourth.title)
                 }
+                .padding(.horizontal)
             }
-            .padding(.horizontal)
-            
             .navigationTitle("Pokemon")
         }.onAppear {
             

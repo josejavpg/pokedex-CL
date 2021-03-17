@@ -17,6 +17,18 @@ enum PKGeneration: Int, CaseIterable {
 }
 
 extension PKGeneration {
+    var title: String {
+        switch self {
+        case .first:
+            return "First Generation"
+        case .second:
+            return "Second Generation"
+        case .third:
+            return "Third Generation"
+        case .fourth:
+            return "Fourth Generation"
+        }
+    }
     var limit: Int {
         switch self {
         case .first:

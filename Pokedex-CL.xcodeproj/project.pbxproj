@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		FF62B8902602389A00C37F05 /* PokemonListRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF62B88F2602389A00C37F05 /* PokemonListRow.swift */; };
 		FF6FD61825FE83070006659B /* PokemonCellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD61725FE83070006659B /* PokemonCellView.swift */; };
 		FF6FD63E25FFA5E60006659B /* PokedexCLCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FF6FD63525FFA5E60006659B /* PokedexCLCore.framework */; };
 		FF6FD64525FFA5E60006659B /* PokedexCLCoreTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FF6FD64425FFA5E60006659B /* PokedexCLCoreTests.swift */; };
@@ -81,6 +82,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		FF62B88F2602389A00C37F05 /* PokemonListRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonListRow.swift; sourceTree = "<group>"; };
 		FF6FD61225FE82A80006659B /* Pokemon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pokemon.swift; sourceTree = "<group>"; };
 		FF6FD61725FE83070006659B /* PokemonCellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PokemonCellView.swift; sourceTree = "<group>"; };
 		FF6FD63525FFA5E60006659B /* PokedexCLCore.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PokedexCLCore.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -155,6 +157,7 @@
 			children = (
 				FF6FD61725FE83070006659B /* PokemonCellView.swift */,
 				FFDFAF0525FCD9BB00AB76E4 /* PokemonListView.swift */,
+				FF62B88F2602389A00C37F05 /* PokemonListRow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,6 +518,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FFDFAF0625FCD9BB00AB76E4 /* PokemonListView.swift in Sources */,
+				FF62B8902602389A00C37F05 /* PokemonListRow.swift in Sources */,
 				FF6FD61825FE83070006659B /* PokemonCellView.swift in Sources */,
 				FF6FD69425FFC7B40006659B /* PokemonViewModel.swift in Sources */,
 				FFDFAF0425FCD9BB00AB76E4 /* Pokedex_CLApp.swift in Sources */,
