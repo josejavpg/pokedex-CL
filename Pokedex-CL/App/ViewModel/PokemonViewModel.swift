@@ -7,7 +7,7 @@
 
 import Foundation
 import PokedexCLCore
-import Combine
+import SwiftUI
 
 enum PKGeneration: Int, CaseIterable {
     case first = 1
@@ -49,9 +49,22 @@ extension PKGeneration {
         case .second:
             return Self.first.limit
         case .third:
-            return Self.second.limit
+            return Self.first.limit + Self.second.limit
         case .fourth:
-            return Self.third.limit
+            return Self.first.limit + Self.second.limit + Self.third.limit
+        }
+    }
+    
+    var color: Color {
+        switch self {
+        case .first:
+            return .blue
+        case .second:
+            return .red
+        case .third:
+            return .green
+        case .fourth:
+            return .yellow
         }
     }
 }

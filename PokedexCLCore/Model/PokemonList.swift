@@ -29,10 +29,12 @@ public struct PKPreview: Identifiable {
         self.id = id
         self.name = name
         self.url = url
+        self.officialArtwork = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png")!
     }
     
     public let id: String
     public let name: String
     public let url: String
+    public let officialArtwork: URL
 }
 

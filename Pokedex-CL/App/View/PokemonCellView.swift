@@ -7,11 +7,11 @@
 
 import SwiftUI
 import PokedexCLCore
+import Kingfisher
 
 struct PokemonCellView: View {
     let pokemon: PKPreview
-    
-    let gradient = LinearGradient(gradient: Gradient(colors: [.white, .green]),
+    let gradient = LinearGradient(gradient: Gradient(colors: [.white, .gray]),
                                   startPoint: .top,
                                   endPoint: .bottom)
     
@@ -21,7 +21,7 @@ struct PokemonCellView: View {
                 Text(pokemon.name)
                     .font(.headline)
                 
-                Image("1")
+                KFImage(pokemon.officialArtwork)
                     .resizable()
                     .scaledToFit()
                     .frame(width: 70, height: 70, alignment: .center)
@@ -41,16 +41,6 @@ struct PokemonCellView: View {
         .padding()
         .background(gradient.opacity(0.5))
         .cornerRadius(15)
-        .shadow(color: .green, radius: 5, x: 0.0, y: 4.0)
-    }
-}
-
-extension PokemonCellView {
-    class ViewModel: ObservableObject {
-        @Published var pokemonPreview: PKPreview
-        
-        init(pokemonPreview: PKPreview) {
-            self.pokemonPreview = pokemonPreview
-        }
+        .shadow(color: .blue, radius: 5, x: 0.0, y: 4.0)
     }
 }
