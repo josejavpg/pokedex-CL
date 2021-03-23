@@ -18,7 +18,8 @@ private extension URL {
 
 public enum Endpoint {
     case move(id: Int)
-    case pokemon(id: Int)
+    case pokemon(id: String)
+    case pokemonDetail(url: String)
     case pokemonsByGeneration(id: Int)
     case pokemonList(limit: Int, offset: Int)
 }
@@ -34,6 +35,8 @@ extension Endpoint {
             return .makeForEndpoint("generation/\(id)")
         case .pokemonList(let limit, let offset):
             return .makeForEndpoint("pokemon?limit=\(limit)&offset=\(offset)")
+        case .pokemonDetail(let url):
+            return URL(string: url)!
         }
     }
 }

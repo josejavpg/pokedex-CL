@@ -27,7 +27,8 @@ struct PokemonListView: View {
                 }
                 .padding(.horizontal)
             }
-            .navigationTitle("Pokemon")
+            .navigationBarTitleDisplayMode(.large)
+            .navigationTitle("Pokemon List")
         }.onAppear {
             
         }

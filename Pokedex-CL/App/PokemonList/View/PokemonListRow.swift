@@ -21,10 +21,21 @@ struct PokemonGenerationListRow: View {
             ScrollView(.horizontal) {
                 LazyHGrid(rows: gridItems, spacing: 20) {
                     ForEach(pokemons) { pokemon in
-                        PokemonCellView(pokemon: pokemon)
+                        NavigationLink(destination: PokemonDetailView()) {
+                            PokemonCellView(pokemon: pokemon)
+                        }.foregroundColor(.black)
                     }
                 }
             }
         }
     }
+}
+
+extension PokemonGenerationListRow {
+    func fetchInfo(for pokemon: PKPreview) {
+        PokedexService.share.fetchPokemon(with: pokemon.id) { (pokemon, error) in
+            print("pokemon")
+        }
+    }
+    
 }

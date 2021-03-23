@@ -19,7 +19,7 @@ struct PokemonCellView: View {
         ZStack {
             VStack(alignment: .center) {
                 Text(pokemon.name)
-                    .font(.headline)
+                    .font(.subheadline)
                 
                 KFImage(pokemon.officialArtwork)
                     .resizable()

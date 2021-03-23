@@ -27,7 +27,7 @@ public struct PKResult: Codable {
 public struct PKPreview: Identifiable {
     public init(id: String, name: String, url: String) {
         self.id = id
-        self.name = name
+        self.name = name.uppercased()
         self.url = url
         self.officialArtwork = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/\(id).png")!
     }
