@@ -162,7 +162,6 @@
 				FF6FD61725FE83070006659B /* PokemonCellView.swift */,
 				FFDFAF0525FCD9BB00AB76E4 /* PokemonListView.swift */,
 				FF62B88F2602389A00C37F05 /* PokemonListRow.swift */,
-				FF7538B72602564200C4338A /* PokemonDetailView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -197,9 +196,9 @@
 		FF6FD62F25FFA5A50006659B /* App */ = {
 			isa = PBXGroup;
 			children = (
+				FFAFB36E260A5750000400D4 /* PokemonDetail */,
+				FFAFB36D260A5748000400D4 /* PokemonList */,
 				FF6FD61F25FE83650006659B /* Resources */,
-				FF6FD60525FE820C0006659B /* ViewModel */,
-				FF6FD60425FE82080006659B /* View */,
 			);
 			path = App;
 			sourceTree = "<group>";
@@ -231,6 +230,31 @@
 				FF6FD66A25FFB8EC0006659B /* PokemonService.swift */,
 			);
 			path = API;
+			sourceTree = "<group>";
+		};
+		FFAFB36D260A5748000400D4 /* PokemonList */ = {
+			isa = PBXGroup;
+			children = (
+				FF6FD60525FE820C0006659B /* ViewModel */,
+				FF6FD60425FE82080006659B /* View */,
+			);
+			path = PokemonList;
+			sourceTree = "<group>";
+		};
+		FFAFB36E260A5750000400D4 /* PokemonDetail */ = {
+			isa = PBXGroup;
+			children = (
+				FFAFB36F260A5780000400D4 /* View */,
+			);
+			path = PokemonDetail;
+			sourceTree = "<group>";
+		};
+		FFAFB36F260A5780000400D4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FF7538B72602564200C4338A /* PokemonDetailView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		FFDFAEF725FCD9BB00AB76E4 = {

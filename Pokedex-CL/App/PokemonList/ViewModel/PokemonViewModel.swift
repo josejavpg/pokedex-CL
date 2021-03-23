@@ -104,9 +104,6 @@ extension PokemonListViewModel {
                 }
             }
             
-            
-            
-            
         }
     }
 }
